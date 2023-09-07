@@ -1,5 +1,5 @@
 ### Hi there 👋
-
+大家好，我叫汪祖滔，来自江西上饶，是集美大学计算21的学生。我正在计算机系学习，对编程和软件开发充满热情。我喜欢解决复杂的问题，并不断学习新的技术。希望通过学习和实践，将来能在科技领域做出重要贡献。
 <!--
 **qiherio/qiherio** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
