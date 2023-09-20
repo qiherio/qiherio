@@ -1,0 +1,47 @@
+package rjian;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.HashSet;
+import java.util.Set;
+
+public class demo1 {
+    public static void main(String[] args) {
+        String file1Path = "D:\\Workspace\\src\\rjian\\file1.txt";
+        String file2Path = "D:\\Workspace\\src\\rjian\\file2.txt";
+
+        try {
+            Set<String> file1Lines = readFileLines(file1Path);
+            Set<String> file2Lines = readFileLines(file2Path);
+
+            int totalLines = file1Lines.size() + file2Lines.size();
+            int duplicateLines = 0;
+
+            for (String line : file1Lines) {
+                if (file2Lines.contains(line)) {
+                    duplicateLines++;
+                }
+            }
+
+            double duplicateRate = (double) duplicateLines / totalLines * 100;
+
+            System.out.println("Duplicate rate: " + duplicateRate + "%");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static Set<String> readFileLines(String filePath) throws IOException {
+        Set<String> lines = new HashSet<>();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                lines.add(line);
+            }
+        }
+
+        return lines;
+    }
+}
